@@ -1,4 +1,4 @@
-Features: This feature is to test Leave process
+Feature: This feature is to test Leave process
 
 Scenario: Validate user can apply for leave
 Given user launches OrangeHRM page

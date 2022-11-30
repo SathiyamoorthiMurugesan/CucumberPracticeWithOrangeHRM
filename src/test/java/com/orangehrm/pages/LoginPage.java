@@ -10,10 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.orangehrm.base.OrangeHRMBase;
 
-public class LoginPage extends OrangeHRMBase{
+public class LoginPage {
 	
-//	private WebDriver driver;
-	
+	private WebDriver driver;
+	OrangeHRMBase base = new OrangeHRMBase();
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -32,13 +32,14 @@ public class LoginPage extends OrangeHRMBase{
 	public void launchApplication() {
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 
 	public void loginOrangeHRM() {
 		LoginUsername.sendKeys("Admin");
 		LoginPassword.sendKeys("admin123");
 		SubmitButton.submit();
+		
 	}
 	
 	public void validateLoginPage() {

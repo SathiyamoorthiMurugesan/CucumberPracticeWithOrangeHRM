@@ -1,11 +1,11 @@
 package com.orangehrm.stepDefinitions;
 
-import org.junit.After;
-import org.junit.Before;
-
 import com.orangehrm.base.OrangeHRMBase;
 
-public class Hooks extends OrangeHRMBase {
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+
+public class Hooks {
 	
 	OrangeHRMBase base;
 

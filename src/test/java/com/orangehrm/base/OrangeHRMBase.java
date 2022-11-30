@@ -1,5 +1,7 @@
 package com.orangehrm.base;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -7,11 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.orangehrm.utilities.PropertyReader;
 
-
-
-
 public class OrangeHRMBase {
-
 
 	public static WebDriver driver;
 
@@ -36,6 +34,14 @@ public class OrangeHRMBase {
 
 	public void quitBrowser() {
 		driver.quit();
+	}
+	
+	public void pause(Integer milliSeconds) {
+		try {
+			TimeUnit.MICROSECONDS.sleep(milliSeconds);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
