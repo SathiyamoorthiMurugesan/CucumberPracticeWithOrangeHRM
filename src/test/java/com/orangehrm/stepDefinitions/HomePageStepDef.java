@@ -4,6 +4,7 @@ import com.orangehrm.base.OrangeHRMBase;
 import com.orangehrm.pages.HomePage;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class HomePageStepDef extends OrangeHRMBase {
 	
@@ -13,5 +14,5 @@ public class HomePageStepDef extends OrangeHRMBase {
 	public void user_able_to_see_home_page_of_orange_hrm() {
 		homePage.validateHomePage();
 	}
-
+	
 }

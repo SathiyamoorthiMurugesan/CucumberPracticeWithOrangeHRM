@@ -25,7 +25,20 @@ public class LoginPageStepDef extends OrangeHRMBase{
 		loginPage.loginOrangeHRM();
 	}
 	
-
+	@When("user enters {string} and {string} and clicks on login button")
+	public void user_enters_and_and_clicks_on_login_button(String abc, String bcd) {
+		loginPage.loginOrangeHRM(abc, bcd);
+	}
+	
+	@Then ("validate user is not logged into Orange HRM")
+	public void validate_user_is_not_logged_into_Orange_HRM() {
+		loginPage.validateUserIsNotLoggedIn();
+	}
+	
+	@Then("validate user is able to see required text")
+	public void validate_user_is_able_to_see_required_text() {
+		loginPage.validateRequiredTextOnLoginPage();
+	}
 	
 }
 

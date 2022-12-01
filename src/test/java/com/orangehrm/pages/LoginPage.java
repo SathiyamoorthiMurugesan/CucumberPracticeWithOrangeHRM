@@ -8,12 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.orangehrm.base.CommonMethods;
 import com.orangehrm.base.OrangeHRMBase;
 
 public class LoginPage {
 	
 	private WebDriver driver;
 	OrangeHRMBase base = new OrangeHRMBase();
+//	CommonMethods commonMethods = new CommonMethods(driver);
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -29,6 +31,12 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement SubmitButton;
 	
+	@FindBy(xpath = "//p[text() = 'Invalid credentials']")
+	WebElement invalidCredentialsText;
+	
+	@FindBy(xpath = "//*[text() = 'Required']")
+	WebElement requiredText;
+	
 	public void launchApplication() {
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -42,9 +50,24 @@ public class LoginPage {
 		
 	}
 	
-	public void validateLoginPage() {
-		Assert.assertTrue(LoginUsername.isDisplayed());
+	public void loginOrangeHRM(String userName, String pass) {
+		LoginUsername.sendKeys(userName);
+		LoginPassword.sendKeys(pass);
+		SubmitButton.submit();
+		
 	}
 	
+	public void validateLoginPage() {
+		Assert.assertTrue(LoginUsername.isDisplayed());
+//		commonMethods.selectByVisibileTexy(LoginPassword, null);
+	}
+	
+	public void validateUserIsNotLoggedIn() {
+		Assert.assertTrue(invalidCredentialsText.isDisplayed());
+	}
+	
+	public void validateRequiredTextOnLoginPage() {
+		Assert.assertTrue(requiredText.isDisplayed());
+	}
 
 }

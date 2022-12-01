@@ -28,7 +28,6 @@ public class HomePage {
 	public void validateHomePage() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(dashboardText));
-		System.out.println(dashboardText.getText()+"^^^^^^^^^^^^^^^^");
 		Assert.assertEquals(dashboardText.getText(), "Dashboard");
 	}
 }

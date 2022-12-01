@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "src\\test\\resources\\features"
 		,glue = {"com.orangehrm.stepDefinitions"}
-		,tags = "@LoginWithValidCredentials"
+		,tags = "@loginWithDifferentCredentials"
+		,plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 		
 		)	
 
