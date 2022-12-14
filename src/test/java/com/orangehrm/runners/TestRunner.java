@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		,glue = {"com.orangehrm.stepDefinitions"}
 		,tags = "@loginWithDifferentCredentials"
 		,plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-		
+		,monochrome = true
 		)	
 
 public class TestRunner {

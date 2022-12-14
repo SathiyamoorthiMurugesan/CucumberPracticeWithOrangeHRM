@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginPageStepDef extends OrangeHRMBase{
+public class LoginPageStepDef extends OrangeHRMBase {
 
 	LoginPage loginPage = new LoginPage(driver);
 	
